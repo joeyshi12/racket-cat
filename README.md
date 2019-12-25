@@ -8,4 +8,4 @@ A demonstration of 2D movement in Pygame.
 2. Install Pygame. \
 ``` pip install --user pygame```
 
-3. Inside the project folder, run main.cmd
+3. Inside the project folder, run main.cmd.
