@@ -5,6 +5,7 @@ class Cat:
     GROUND_LEVEL = 330
     GRAVITY = 0.5
     CAT_IMG = pygame.image.load('image/cat.png')
+    jumping = False
 
     def __init__(self, display, x, y, vx=0, vy=0):
         self.display = display
@@ -25,10 +26,8 @@ class Cat:
             self.x = self.display.get_width() + self.CAT_IMG.get_width()
         if self.x > self.display.get_width() + self.CAT_IMG.get_width():
             self.x = -self.CAT_IMG.get_width()
-
-    def jump(self):
-        """gives cat upwards velocity to move up"""
-        self.vy = -15
+        if self.jumping and self.y == self.GROUND_LEVEL:
+            self.vy = -15
 
     def draw(self):
         """draws cat image on display"""

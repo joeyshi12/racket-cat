@@ -27,7 +27,7 @@ def key_handle_down(key):
     elif key == pygame.K_d:
         cat.vx = 5
     elif key == pygame.K_w and cat.y == cat.GROUND_LEVEL:
-        cat.jump()
+        cat.jumping = True
 
 
 def key_handle_up(key):
@@ -35,6 +35,8 @@ def key_handle_up(key):
         cat.vx = 0
     elif key == pygame.K_a and cat.vx == -5:
         cat.vx = 0
+    elif key == pygame.K_w:
+        cat.jumping = False
 
 
 if __name__ == '__main__':
