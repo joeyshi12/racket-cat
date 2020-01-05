@@ -2,17 +2,17 @@ import pygame
 
 
 class Cat:
-    GROUND_LEVEL = 330
-    GRAVITY = 0.5
+    GROUND_LEVEL: int = 330
+    GRAVITY: float = 0.4
     CAT_IMG = pygame.image.load('image/cat.png')
     jumping = False
 
-    def __init__(self, display, x, y, vx=0, vy=0):
+    def __init__(self, display, x, y):
         self.display = display
         self.x = x
         self.y = y
-        self.vx = vx
-        self.vy = vy
+        self.vx = 0
+        self.vy = 0
 
     def move(self):
         """updates cat state for next frame"""
@@ -27,7 +27,7 @@ class Cat:
         if self.x > self.display.get_width() + self.CAT_IMG.get_width():
             self.x = -self.CAT_IMG.get_width()
         if self.jumping and self.y == self.GROUND_LEVEL:
-            self.vy = -15
+            self.vy = -12
 
     def draw(self):
         """draws cat image on display"""

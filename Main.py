@@ -12,7 +12,7 @@ pygame.display.set_caption('Racket Cat Adventures')
 
 clock = pygame.time.Clock()
 crashed = False
-background_image = pygame.image.load('image/background.png')
+background_image = pygame.image.load('image/background.png').convert()
 background_image = pygame.transform.scale(background_image, (display_width, display_height))
 cat = Cat(display, 0, 330)
 
